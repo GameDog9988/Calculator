@@ -58,6 +58,14 @@ html {
   font-size: 1.5rem;
 }
 
+.equal {
+  background-color: slateblue;
+}
+
+.c {
+  background-color: firebrick;
+}
+
 .By-Me {
   text-align: center;
   margin: auto;
