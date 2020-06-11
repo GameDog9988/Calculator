@@ -24,7 +24,7 @@ clearButton.addEventListener("click", () => {
 
 equalButton.addEventListener("click", operate);
 
-for (i = 0; i < numberButtons.length; i++) {
+for (let i = 0; i < numberButtons.length; i++) {
   numberButtons[i].addEventListener("click", () => {
     if (currentOperation.length < 17) {
       appendNum(numberButtons[i].textContent);
@@ -33,7 +33,7 @@ for (i = 0; i < numberButtons.length; i++) {
   });
 }
 
-for (i = 0; i < operatorButtons.length; i++) {
+for (let i = 0; i < operatorButtons.length; i++) {
   operatorButtons[i].addEventListener("click", () => {
     selectOperator(operatorButtons[i].textContent);
   });
