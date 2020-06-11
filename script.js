@@ -1,6 +1,7 @@
 // Selections
 const clearButton = document.querySelector(".c");
-const screenDisplay = document.querySelector(".screen");
+const currentScreenDisplay = document.querySelector(".current-line");
+const previousScreenDisplay = document.querySelector(".previous-line");
 const equalButton = document.querySelector(".equal");
 const numberButtons = document.querySelectorAll(".num");
 const operatorButtons = document.querySelectorAll(".operator");
@@ -13,7 +14,8 @@ let operator;
 let result;
 
 clearButton.addEventListener("click", () => {
-  screenDisplay.textContent = "";
+  currentScreenDisplay.textContent = "";
+  previousScreenDisplay.textContent = "";
   previousResult = "";
   currentOperation = "";
   a = undefined;
@@ -60,7 +62,7 @@ function operate() {
         break;
       case "/":
         if (b == 0) {
-          alert("NOPE! No dividing by 0 !!!");
+          alert("No dividing by 0!");
           clear();
           return;
         }
@@ -106,7 +108,8 @@ function appendNum(number) {
 }
 
 function updateScreen() {
-  screenDisplay.textContent = currentOperation;
+  currentScreenDisplay.textContent = currentOperation;
+  previousScreenDisplay.textContent = previousResult;
 }
 
 function selectOperator(op) {
